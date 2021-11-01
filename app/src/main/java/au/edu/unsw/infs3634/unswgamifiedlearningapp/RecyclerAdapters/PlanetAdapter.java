@@ -30,6 +30,8 @@ public class PlanetAdapter {
         mSetPlanet = planets;
         mListener = listener;
 
+
+
     }
 
     public interface RecyclerViewClickListener{
