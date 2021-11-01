@@ -6,5 +6,5 @@ dependencyResolutionManagement {
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
-rootProject.name = "UNSW Gamified Learning App"
+rootProject.name = "SpaceFrontier"
 include ':app'
