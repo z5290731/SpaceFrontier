@@ -15,7 +15,8 @@ import au.edu.unsw.infs3634.unswgamifiedlearningapp.AppDatabase;
 import au.edu.unsw.infs3634.unswgamifiedlearningapp.DBEntities.Planet;
 import au.edu.unsw.infs3634.unswgamifiedlearningapp.R;
 
-public class PlanetAdapter {
+public class PlanetAdapter extends RecyclerView.Adapter {
+
 
     private Planet mPlanet;
     private RecyclerViewClickListener mListener;
@@ -29,6 +30,8 @@ public class PlanetAdapter {
     public PlanetAdapter(ArrayList<Planet> planets, RecyclerViewClickListener listener) {
         mSetPlanet = planets;
         mListener = listener;
+
+
 
     }
 
@@ -65,6 +68,11 @@ public class PlanetAdapter {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.planet_recycler_view,parent,false);
 
         return new PlanetViewHolder(v,mListener);
+
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
     }
 

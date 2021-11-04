@@ -22,5 +22,52 @@ public class Explorer {
 
     private double quizQuestionsAttempted;
 
+    public Explorer(int explorerID, String explorerName, double progressRate, double quizQuestionsCorrect, double quizQuestionsAttempted) {
 
+        this.explorerID = explorerID;
+        this.explorerName = explorerName;
+        this.progressRate = progressRate;
+        this.quizQuestionsCorrect = quizQuestionsCorrect;
+        this.quizQuestionsAttempted = quizQuestionsAttempted;
+    }
+
+    public int getExplorerID() {
+        return explorerID;
+    }
+
+    public void setExplorerID(int explorerID) {
+        this.explorerID = explorerID;
+    }
+
+    public String getExplorerName() {
+        return explorerName;
+    }
+
+    public void setExplorerName(String explorerName) {
+        this.explorerName = explorerName;
+    }
+
+    public double getProgressRate() {
+        return progressRate;
+    }
+
+    public void setProgressRate(double progressRate) {
+        this.progressRate = progressRate;
+    }
+
+    public double getQuizQuestionsCorrect() {
+        return quizQuestionsCorrect;
+    }
+
+    public void setQuizQuestionsCorrect(double quizQuestionsCorrect) {
+        this.quizQuestionsCorrect = quizQuestionsCorrect;
+    }
+
+    public double getQuizQuestionsAttempted() {
+        return quizQuestionsAttempted;
+    }
+
+    public void setQuizQuestionsAttempted(double quizQuestionsAttempted) {
+        this.quizQuestionsAttempted = quizQuestionsAttempted;
+    }
 }

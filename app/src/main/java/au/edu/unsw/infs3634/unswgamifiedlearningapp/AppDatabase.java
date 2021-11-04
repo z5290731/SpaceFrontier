@@ -6,7 +6,11 @@ import androidx.room.Database;
 import androidx.room.RoomDatabase;
 import androidx.room.Room;
 
-@Database(entities = {}, version = 4)
+import au.edu.unsw.infs3634.unswgamifiedlearningapp.DBEntities.Explorer;
+import au.edu.unsw.infs3634.unswgamifiedlearningapp.DBEntities.JourneyQuiz;
+import au.edu.unsw.infs3634.unswgamifiedlearningapp.DBEntities.Planet;
+
+@Database(entities = {Explorer.class, JourneyQuiz.class, Planet.class}, version = 4)
 
 public abstract class AppDatabase extends RoomDatabase  {
 

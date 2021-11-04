@@ -1,9 +1,16 @@
 package au.edu.unsw.infs3634.unswgamifiedlearningapp.DBEntities;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.util.ArrayList;
 
+@Entity
 public class JourneyQuiz {
 
+    @PrimaryKey
+    @NonNull
     private Integer quizNumber;
 
     private String quizQuestion;
@@ -99,6 +106,8 @@ public class JourneyQuiz {
         ArrayList<JourneyQuiz> quizArray = new ArrayList<>();
         switch(planetName) {
             case "Mercury":
+
+
 
                 break;
 
