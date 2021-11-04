@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UNSWGamifiedLearningApp">
         <activity
+            android:name=".DetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AuthenticationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LessonWelcomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Tutorial"
+            android:exported="true" />
+        <activity
+            android:name=".InitialWelcome"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
