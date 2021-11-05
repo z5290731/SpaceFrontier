@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UNSWGamifiedLearningApp">
         <activity
+            android:name=".LessonPlanetDataActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LessonWikiActivity"
+            android:exported="true" />
+        <activity
             android:name=".DetailActivity"
             android:exported="true" />
         <activity

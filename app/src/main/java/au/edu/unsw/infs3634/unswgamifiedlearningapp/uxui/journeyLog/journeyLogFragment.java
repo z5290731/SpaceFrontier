@@ -74,7 +74,7 @@ public class journeyLogFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_journey_log, container, false);
 
-        RecyclerViewList = view.findViewById(R.id.actionDown);
+        RecyclerViewList = view.findViewById(R.id.journeyRecycler);
 
         LinearLayoutManager planetLayoutManager = new LinearLayoutManager(view.getContext());
 
@@ -91,7 +91,7 @@ public class journeyLogFragment extends Fragment {
         jPlanetAdapter.setPlanetData(Planet.importPlanetData());
         RecyclerViewList.setAdapter(jPlanetAdapter);
 
-        RecyclerViewList = view.findViewById(R.id.actionDown);
+        RecyclerViewList = view.findViewById(R.id.journeyRecycler);
 
         return view;
 
