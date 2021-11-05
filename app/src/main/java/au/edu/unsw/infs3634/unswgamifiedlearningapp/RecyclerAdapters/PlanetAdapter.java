@@ -2,9 +2,13 @@ package au.edu.unsw.infs3634.unswgamifiedlearningapp.RecyclerAdapters;
 
 import static android.content.ContentValues.TAG;
 
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,9 +17,12 @@ import java.util.ArrayList;
 
 import au.edu.unsw.infs3634.unswgamifiedlearningapp.AppDatabase;
 import au.edu.unsw.infs3634.unswgamifiedlearningapp.DBEntities.Planet;
+import au.edu.unsw.infs3634.unswgamifiedlearningapp.LessonWelcomeActivity;
 import au.edu.unsw.infs3634.unswgamifiedlearningapp.R;
 
-public class PlanetAdapter extends RecyclerView.Adapter {
+import static android.content.ContentValues.TAG;
+
+public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetViewHolder> {
 
 
     private Planet mPlanet;
@@ -33,6 +40,7 @@ public class PlanetAdapter extends RecyclerView.Adapter {
 
 
 
+
     }
 
     public interface RecyclerViewClickListener{
@@ -41,8 +49,11 @@ public class PlanetAdapter extends RecyclerView.Adapter {
 
     public static class PlanetViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        //INSERT ADAPTER STUFF
 
+
+        //INSERT ADAPTER STUFF
+        public ImageView planetKawaii;
+        public TextView planetName;
         public View view;
         private RecyclerViewClickListener mListener;
 
@@ -50,6 +61,11 @@ public class PlanetAdapter extends RecyclerView.Adapter {
         public PlanetViewHolder(@NonNull View itemView, RecyclerViewClickListener listener) {
             super(itemView);
             mListener = listener;
+            itemView.setOnClickListener(this);
+            Log.d(TAG, "On Click Working!");
+            planetName = itemView.findViewById(R.id.planetName);
+            planetKawaii = itemView.findViewById(R.id.planetKawaii);
+            String sPlanetName = planetName.toString();
             // TAG LOG
             // FINDVIEWBYID;
         }
@@ -63,25 +79,39 @@ public class PlanetAdapter extends RecyclerView.Adapter {
     }
 
     @NonNull
-    //@Override
-    public PlanetViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    @Override
+    public PlanetAdapter.PlanetViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.planet_recycler_view,parent,false);
 
         return new PlanetViewHolder(v,mListener);
 
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
-    }
-
 
     public void onBindViewHolder(@NonNull PlanetViewHolder holder, int position) {
-        Planet journeyPosition =mSetPlanet.get(position);
-        //SET TEXT POSITION
-        //SET IMAGE RESOURCE THROUGH ARRAY
+        final Planet planetAtPosition = mSetPlanet.get(position);
+
+
+        holder.planetName.setText(String.valueOf(planetAtPosition.getPlanetName()));
+        holder.planetKawaii.setImageResource(planetAtPosition.getPlanetPicture());
+        String sPlanetName = String.valueOf(planetAtPosition.getPlanetName());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent wikiIntent = new Intent(v.getContext(), LessonWelcomeActivity.class);
+                wikiIntent.putExtra("planet_name_first_pass",sPlanetName);
+                System.out.println(sPlanetName + "Hello");
+                v.getContext().startActivity(wikiIntent);
+
+
+            }
+        });
+
     }
+
 
 
     public int getItemCount() {

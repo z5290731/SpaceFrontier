@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import au.edu.unsw.infs3634.unswgamifiedlearningapp.RecyclerAdapters.PlanetAdapter;
+import au.edu.unsw.infs3634.unswgamifiedlearningapp.uxui.journeyLog.journeyLogFragment;
 
 public class MainActivity extends AppCompatActivity {
 

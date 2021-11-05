@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "149982659492",
+    "project_id": "spacefrontier-b2799",
+    "storage_bucket": "spacefrontier-b2799.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:149982659492:android:553b51805ff5689a9af731",
+        "android_client_info": {
+          "package_name": "au.edu.unsw.infs3634.unswgamifiedlearningapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "149982659492-hnspv50cm0uauldgr7a9v5tcb38vnj8m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBk8UnV7ZvXXP1l927mB50mb1kgFskTbI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "149982659492-hnspv50cm0uauldgr7a9v5tcb38vnj8m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
