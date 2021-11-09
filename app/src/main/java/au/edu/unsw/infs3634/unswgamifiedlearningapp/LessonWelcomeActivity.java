@@ -35,6 +35,8 @@ public class LessonWelcomeActivity extends AppCompatActivity {
         String wPlanetName = getIntent().getStringExtra("planet_name_first_pass");
         int planetPicture = getIntent().getIntExtra("planet_picture",0);
 
+        System.out.println(planetPicture);
+
         //aPlanet = Planet.importPlanetData().get(planetName)
         int position = intent.getIntExtra(String.valueOf(journeyLogFragment.EXTRA_MESSAGE), 0);
         //wPlanet = Planet.importPlanetData().get(position);
