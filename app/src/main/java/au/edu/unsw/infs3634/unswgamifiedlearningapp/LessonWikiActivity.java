@@ -20,6 +20,9 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Iterator;
+import java.util.Locale;
+
 import au.edu.unsw.infs3634.unswgamifiedlearningapp.DBEntities.Planet;
 
 public class LessonWikiActivity extends AppCompatActivity {
@@ -55,12 +58,26 @@ public class LessonWikiActivity extends AppCompatActivity {
 
             String planetName = getIntent().getStringExtra("planet");
 
+            String lowerCasePlanet = planetName.toLowerCase();
+
+
 
 
             System.out.println(planetName + "Acquiring From WikiPedia");
 
-            final String wikiAPI = "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&ppprop=disambiguation&exsentences=10&exlimit=1&explaintext&titles=" + planetName + " (planet)" + "&format=json";
+            //final String wikiAPI = "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&ppprop=disambiguation&exsentences=10&exlimit=1&explaintext&titles=" + planetName + "&format=json";
 
+            final String wikiAPI;
+
+            System.out.println(lowerCasePlanet + "hello");
+
+            if(lowerCasePlanet.equals("mercury")) {
+                wikiAPI = "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exsentences=10&exlimit=1&explaintext&titles=" + planetName + " (planet)" + "&format=json";
+                System.out.println(wikiAPI);
+            } else {
+                wikiAPI = "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exsentences=10&exlimit=1&explaintext&titles=" + planetName + "&format=json";
+                System.out.println("Planet is not mercury");
+            }
 
             Context applicationContext = getApplicationContext();
             final RequestQueue queue = Volley.newRequestQueue(applicationContext);
@@ -74,9 +91,11 @@ public class LessonWikiActivity extends AppCompatActivity {
                         String article = extract.getString("pages");
                         String articleParse = article.replace("\"","");
                         String articleParse1 = articleParse.replace("\n","");
-                        String articleParse2 = articleParse1.replace("}]","");
+                        String articleParse2 = articleParse1.replace("}}","");
+                        System.out.println(planetName + "This is the planet being viewed right now");
                         String articleClean = planetName + " " + articleParse2.substring(article.indexOf("ract"));
                         wikiText.setText(articleClean);
+
                         System.out.println(articleClean);
                         queue.stop();
 
