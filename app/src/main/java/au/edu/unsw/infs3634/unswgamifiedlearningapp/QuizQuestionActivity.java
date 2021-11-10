@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.concurrent.Executors;
@@ -97,14 +98,21 @@ public class QuizQuestionActivity extends AppCompatActivity {
                 System.out.println(quizDetails.getQuizNumber());
                 System.out.println(quizDetails.getQuizAnswer() + "THIS IS THE QUIZZES ANSWER");
 
+                String correct = "Correct Answer";
+                String incorrect = "Incorrect Answer";
+
                 if(selectedAnswerString.equals(quizDetails.getQuizAnswer())) {
                     quizPoints++;
                     System.out.println("ANSWER WAS CORRECT");
+                    Toast.makeText(getApplicationContext(),correct,Toast.LENGTH_SHORT).show();
+
                     setQuestion();
 
                     if(currentQuestionNumber <= 10) {
                         quizCompletion();
                     } else {
+
+                        Toast.makeText(getApplicationContext(),incorrect,Toast.LENGTH_SHORT).show();
                         System.out.println("QUESTION WAS NOT CHECKED");
                         setQuestion();
                     }

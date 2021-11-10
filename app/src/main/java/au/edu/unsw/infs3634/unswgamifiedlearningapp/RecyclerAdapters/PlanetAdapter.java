@@ -97,6 +97,9 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         holder.planetKawaii.setImageResource(planetAtPosition.getPlanetPicture());
         String sPlanetName = String.valueOf(planetAtPosition.getPlanetName());
         int planetPicture = planetAtPosition.getPlanetPicture();
+        String planetVideoID = String.valueOf(planetAtPosition.getPlanetVideo());
+        String planetDescriptionLong = String.valueOf(planetAtPosition.getPlanetDescriptionLong());
+        String planetSubtitle = String.valueOf(planetAtPosition.getPlanetSubtitle());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -105,6 +108,9 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
                 Intent wikiIntent = new Intent(v.getContext(), LessonWelcomeActivity.class);
                 wikiIntent.putExtra("planet_name_first_pass",sPlanetName);
                 wikiIntent.putExtra("planet_picture", planetPicture);
+                wikiIntent.putExtra("planet_video", planetVideoID);
+                wikiIntent.putExtra("planet_description", planetDescriptionLong);
+                wikiIntent.putExtra("planet_subtitle", planetSubtitle);
                 System.out.println(sPlanetName + "Hello");
                 v.getContext().startActivity(wikiIntent);
 

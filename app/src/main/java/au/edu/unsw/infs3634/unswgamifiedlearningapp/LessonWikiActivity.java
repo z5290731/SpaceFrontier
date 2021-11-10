@@ -3,11 +3,13 @@ package au.edu.unsw.infs3634.unswgamifiedlearningapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -19,6 +21,7 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.Iterator;
 import java.util.Locale;
@@ -29,7 +32,8 @@ public class LessonWikiActivity extends AppCompatActivity {
 
 
     //public Planet planetName;
-    private TextView wikiText;
+    private TextView wikiText, txPlanet, txSubtitle;
+    private ImageView ivPlanet;
     private View view;
     public Planet wPlanet;
     public static final String TAG  = "TEST";
@@ -41,7 +45,21 @@ public class LessonWikiActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lesson_wiki);
 
         String planetName = getIntent().getStringExtra("planet");
+        String planetSubtitle = getIntent().getStringExtra("planet_subtitle");
+        int planetPicture = getIntent().getIntExtra("planet_picture",0);
+
         System.out.println(planetName +"HELLO THERE");
+
+        TextView txPlanet = findViewById(R.id.txPlanet);
+        ImageView ivPlanet = findViewById(R.id.ivPlanet);
+        TextView txSubtitle = findViewById(R.id.txSubtitle);
+
+
+        txPlanet.setText(planetName);
+        txSubtitle.setText(planetSubtitle);
+        ivPlanet.setImageResource(planetPicture);
+
+
 
         //String stringPlanetName = String.valueOf(planetName);
 
