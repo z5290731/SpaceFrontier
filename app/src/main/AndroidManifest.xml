@@ -23,6 +23,9 @@
             android:name=".QuizJourneyEndActivity"
             android:exported="true" />
         <activity
+            android:name=".QuizJourneyEndActivity"
+            android:exported="true" />
+        <activity
             android:name=".LessonVideoActivity"
             android:exported="true" />
         <activity

@@ -26,7 +26,6 @@ public class QuizQuestionActivity extends AppCompatActivity {
     public Integer currentQuestionNumber = 0;
     public Integer totalNumberQuestions = 0;
     public String planetName;
-    public int planetPic;
     public boolean questionAnswered;
     public int quizPoints;
 
@@ -38,7 +37,6 @@ public class QuizQuestionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quiz_question);
 
         planetName = getIntent().getStringExtra("planet");
-        planetPic = getIntent().getIntExtra("planet_picture",0);
         System.out.println(planetName +"HELLO THERE");
 
         TextView questionNumber = findViewById(R.id.questionNumber);
@@ -186,8 +184,6 @@ public class QuizQuestionActivity extends AppCompatActivity {
         Intent intent = new Intent(this,QuizJourneyEndActivity.class);
         intent.putExtra("totalScore",String.valueOf(quizPoints));
         intent.putExtra("planetName", planetName);
-        intent.putExtra("planet_picture", planetPic);
-        startActivity(intent);
 
     }
 
