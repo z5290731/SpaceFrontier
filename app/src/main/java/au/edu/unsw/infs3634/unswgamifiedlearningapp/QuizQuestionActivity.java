@@ -26,7 +26,6 @@ public class QuizQuestionActivity extends AppCompatActivity {
     public Integer currentQuestionNumber = 0;
     public Integer totalNumberQuestions = 0;
     public String planetName;
-    public int planetPic;
     public boolean questionAnswered;
     public int quizPoints;
 
@@ -38,7 +37,6 @@ public class QuizQuestionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quiz_question);
 
         planetName = getIntent().getStringExtra("planet");
-        planetPic = getIntent().getIntExtra("planet_picture",0);
         System.out.println(planetName +"HELLO THERE");
 
         TextView questionNumber = findViewById(R.id.questionNumber);
@@ -48,6 +46,8 @@ public class QuizQuestionActivity extends AppCompatActivity {
         Button buttonChoiceC = findViewById(R.id.buttonChoiceC);
         Button buttonChoiceD = findViewById(R.id.buttonChoiceD);
         ImageButton exitButton = findViewById(R.id.exitButton);
+        Button buttonNext = findViewById(R.id.buttonNext);
+        Button buttonConfirm = findViewById(R.id.buttonConfirm);
 
 
         questionArray = JourneyQuiz.getJourneyQuiz(planetName);
@@ -59,6 +59,20 @@ public class QuizQuestionActivity extends AppCompatActivity {
         setQuestion();
 
         checkAnswer();
+
+        buttonConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(questionAnswered == false) {
+
+                    checkAnswer();
+                } else {
+                    System.out.println("NOTHING WAS SELECTED");
+                }
+
+
+            }
+        });
 
 
     }
@@ -123,21 +137,17 @@ public class QuizQuestionActivity extends AppCompatActivity {
 
                 } else {
 
-                    if(currentQuestionNumber < 10) {
-
-                        Toast.makeText(getApplicationContext(),incorrect,Toast.LENGTH_SHORT).show();
-                        System.out.println("NEXT Q INCORRECT");
-                        setQuestion();
-
-
-
-                    } else {
+                    if(currentQuestionNumber > 10) {
 
                         Toast.makeText(getApplicationContext(),"Quiz Completed!",Toast.LENGTH_SHORT).show();
                         Toast.makeText(getApplicationContext(),total,Toast.LENGTH_SHORT).show();
                         quizCompletion();
 
+                    } else {
 
+                        Toast.makeText(getApplicationContext(),incorrect,Toast.LENGTH_SHORT).show();
+                        System.out.println("NEXT Q INCORRECT");
+                        setQuestion();
                     }
 
 
@@ -174,8 +184,6 @@ public class QuizQuestionActivity extends AppCompatActivity {
         Intent intent = new Intent(this,QuizJourneyEndActivity.class);
         intent.putExtra("totalScore",String.valueOf(quizPoints));
         intent.putExtra("planetName", planetName);
-        intent.putExtra("planet_picture", planetPic);
-        startActivity(intent);
 
     }
 
@@ -192,7 +200,8 @@ public class QuizQuestionActivity extends AppCompatActivity {
             Button buttonChoiceC = findViewById(R.id.buttonChoiceC);
             Button buttonChoiceD = findViewById(R.id.buttonChoiceD);
             ImageButton exitButton = findViewById(R.id.exitButton);
-
+            Button buttonNext = findViewById(R.id.buttonNext);
+            Button buttonConfirm = findViewById(R.id.buttonConfirm);
 
             buttonChoiceA.setClickable(true);
             buttonChoiceB.setClickable(true);

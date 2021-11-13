@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Handler delayHandler = new Handler();
-        delayHandler.postDelayed(loginScreen, 200);
+        delayHandler.postDelayed(loginScreen, 300);
 
     }
 
