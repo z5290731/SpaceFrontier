@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_journey_log"
+        android:title="Journey Log"
+        />
+
+    <item
+        android:id="@+id/nav_space_station"
+        android:title="Space Station"
+        />
+
+    <item
+        android:id="@+id/nav_cantina"
+        android:title="Chalmun's Cantina"
+        />
+
+
+</menu>

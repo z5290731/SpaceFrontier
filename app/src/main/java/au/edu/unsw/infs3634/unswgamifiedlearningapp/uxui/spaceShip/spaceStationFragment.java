@@ -12,10 +12,10 @@ import au.edu.unsw.infs3634.unswgamifiedlearningapp.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link spaceShipFragment#newInstance} factory method to
+ * Use the {@link spaceStationFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class spaceShipFragment extends Fragment {
+public class spaceStationFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class spaceShipFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public spaceShipFragment() {
+    public spaceStationFragment() {
         // Required empty public constructor
     }
 
@@ -39,8 +39,8 @@ public class spaceShipFragment extends Fragment {
      * @return A new instance of fragment spaceShipFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static spaceShipFragment newInstance(String param1, String param2) {
-        spaceShipFragment fragment = new spaceShipFragment();
+    public static spaceStationFragment newInstance(String param1, String param2) {
+        spaceStationFragment fragment = new spaceStationFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
