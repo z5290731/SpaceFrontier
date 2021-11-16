@@ -2,32 +2,32 @@ package au.edu.unsw.infs3634.unswgamifiedlearningapp;
 
 public class NotesFireBaseModel {
 
-    public String titleNotes;
+    public String notesTitle;
 
-    public String bodyNotes;
+    public String notesBody;
 
     public NotesFireBaseModel() {
 
     }
 
-    public NotesFireBaseModel(String titleNotes, String bodyNotes) {
-        this.titleNotes = titleNotes;
-        this.bodyNotes = bodyNotes;
+    public NotesFireBaseModel(String notesTitle, String notesBody) {
+        this.notesTitle = notesTitle;
+        this.notesBody = notesBody;
     }
 
-    public String getTitleNotes() {
-        return titleNotes;
+    public String getNotesTitle() {
+        return notesTitle;
     }
 
-    public void setTitleNotes(String titleNotes) {
-        this.titleNotes = titleNotes;
+    public void setNotesTitle(String notesTitle) {
+        this.notesTitle = notesTitle;
     }
 
-    public String getBodyNotes() {
-        return bodyNotes;
+    public String getNotesBody() {
+        return notesBody;
     }
 
-    public void setBodyNotes(String bodyNotes) {
-        this.bodyNotes = bodyNotes;
+    public void setNotesBody(String notesBody) {
+        this.notesBody = notesBody;
     }
 }
