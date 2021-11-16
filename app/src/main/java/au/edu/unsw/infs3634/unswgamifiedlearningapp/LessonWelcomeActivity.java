@@ -101,6 +101,7 @@ public class LessonWelcomeActivity extends AppCompatActivity {
                 Context c = v.getContext();
                 Intent planetInfoIntent = new Intent(getApplicationContext(),QuizQuestionActivity.class);
                 planetInfoIntent.putExtra("planet", wPlanetName);
+                planetInfoIntent.putExtra("planet_picture",planetPicture);
                 c.startActivity(planetInfoIntent);
 
             }

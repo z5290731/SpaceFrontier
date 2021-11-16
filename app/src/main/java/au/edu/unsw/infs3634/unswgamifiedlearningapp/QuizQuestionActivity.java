@@ -2,6 +2,7 @@ package au.edu.unsw.infs3634.unswgamifiedlearningapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,7 @@ public class QuizQuestionActivity extends AppCompatActivity {
     public Integer currentQuestionNumber = 0;
     public Integer totalNumberQuestions = 0;
     public String planetName;
+    public int planetPic;
     public boolean questionAnswered;
     public int quizPoints;
 
@@ -36,6 +38,7 @@ public class QuizQuestionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quiz_question);
 
         planetName = getIntent().getStringExtra("planet");
+        planetPic = getIntent().getIntExtra("planet_picture",0);
         System.out.println(planetName +"HELLO THERE");
 
         TextView questionNumber = findViewById(R.id.questionNumber);
@@ -82,6 +85,17 @@ public class QuizQuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                Button buttonChoiceA = findViewById(R.id.buttonChoiceA);
+                Button buttonChoiceB = findViewById(R.id.buttonChoiceB);
+                Button buttonChoiceC = findViewById(R.id.buttonChoiceC);
+                Button buttonChoiceD = findViewById(R.id.buttonChoiceD);
+
+
+                buttonChoiceA.setClickable(false);
+                buttonChoiceB.setClickable(false);
+                buttonChoiceC.setClickable(false);
+                buttonChoiceD.setClickable(false);
+
                 int currentArrayNumber = currentQuestionNumber -1;
 
                 quizDetails = questionArray.get(currentArrayNumber);
@@ -99,30 +113,47 @@ public class QuizQuestionActivity extends AppCompatActivity {
                 System.out.println(quizDetails.getQuizAnswer() + "THIS IS THE QUIZZES ANSWER");
 
                 String correct = "Correct Answer";
-                String incorrect = "Incorrect Answer";
+                String incorrect = "Incorrect Answer procceding to neext quesiton";
+                String total = quizPoints + "Total Points";
+
 
                 if(selectedAnswerString.equals(quizDetails.getQuizAnswer())) {
-                    quizPoints++;
-                    System.out.println("ANSWER WAS CORRECT");
-                    Toast.makeText(getApplicationContext(),correct,Toast.LENGTH_SHORT).show();
 
-                    setQuestion();
+                    if(currentQuestionNumber < 10) {
 
-                    if(currentQuestionNumber <= 10) {
+                        quizPoints++;
+                        System.out.println("ANSWER WAS CORRECT");
+                        Toast.makeText(getApplicationContext(),correct,Toast.LENGTH_SHORT).show();
+                        System.out.println("This is the current question being marked" + currentQuestionNumber);
+                        setQuestion();
+                        System.out.println(currentQuestionNumber + "QUESTION NOW");
+
+                    } else {
+
+                        Toast.makeText(getApplicationContext(),"Quiz Completed!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),total,Toast.LENGTH_SHORT).show();
                         quizCompletion();
+
+                    }
+
+
+                } else {
+
+                    if(currentQuestionNumber > 10) {
+
+                        Toast.makeText(getApplicationContext(),"Quiz Completed!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),total,Toast.LENGTH_SHORT).show();
+                        quizCompletion();
+
                     } else {
 
                         Toast.makeText(getApplicationContext(),incorrect,Toast.LENGTH_SHORT).show();
-                        System.out.println("QUESTION WAS NOT CHECKED");
+                        System.out.println("NEXT Q INCORRECT");
                         setQuestion();
                     }
 
 
-
-                } else {
-                    System.out.println("ISSUE WITH CHECKING LOGIC");
                 }
-
 
             }
         };
@@ -152,6 +183,12 @@ public class QuizQuestionActivity extends AppCompatActivity {
     }
 
     private void quizCompletion() {
+        Intent intent = new Intent(this,QuizJourneyEndActivity.class);
+        intent.putExtra("totalScore",String.valueOf(quizPoints));
+        intent.putExtra("planetName", planetName);
+        intent.putExtra("planet_picture", planetPic);
+        startActivity(intent);
+
     }
 
     private void setQuestion() {
@@ -169,6 +206,11 @@ public class QuizQuestionActivity extends AppCompatActivity {
             ImageButton exitButton = findViewById(R.id.exitButton);
             Button buttonNext = findViewById(R.id.buttonNext);
             Button buttonConfirm = findViewById(R.id.buttonConfirm);
+
+            buttonChoiceA.setClickable(true);
+            buttonChoiceB.setClickable(true);
+            buttonChoiceC.setClickable(true);
+            buttonChoiceD.setClickable(true);
 
 
             System.out.println(currentQuestionNumber + "THIS IS THE CURRENT QUESTION NUMBER");
@@ -193,7 +235,7 @@ public class QuizQuestionActivity extends AppCompatActivity {
 
         } else {
             //INSERT RESULT TING;
-            System.out.println("HELLO WORLD");
+            System.out.println("ISSUE WITH SETTING QUESTION HERE");
         }
 
     }
