@@ -8,7 +8,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.UNSWGamifiedLearningApp">
+        android:theme="@style/Theme.UNSWGamifiedLearningApp"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ViewNotesDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".EditNotesDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CreateMissionNotesActivity"
+            android:exported="true" />
         <activity
             android:name=".QuizJourneyEndActivity"
             android:exported="true" />
