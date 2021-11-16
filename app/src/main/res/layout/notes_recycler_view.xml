@@ -7,10 +7,10 @@
     android:layout_height="wrap_content"
     android:layout_margin="6dp"
     android:focusable="true"
-    app:cardBackgroundColor="#3B3B47"
-
-
+    app:cardBackgroundColor="#00FFFFFF"
     app:cardCornerRadius="7dp"
+
+
     app:cardElevation="10dp">
 
     <LinearLayout
@@ -23,24 +23,12 @@
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="37dp"
-            android:fontFamily="@font/electrolize"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="10dp"
-            android:text="TextView"
-            android:textColor="#FFFFFF" />
+            android:text="TextView" />
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/electrolize"
-            android:paddingLeft="15dp"
-            android:paddingTop="15dp"
-            android:paddingRight="15dp"
-            android:paddingBottom="15dp"
-            android:text="TextView"
-            android:textColor="#FFFFFF" />
+            android:layout_height="182dp"
+            android:text="TextView" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -21,6 +21,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
+import au.edu.unsw.infs3634.unswgamifiedlearningapp.uxui.notesFragment;
+
 public class CreateMissionNotesActivity extends AppCompatActivity {
 
     public EditText titleMissionNotes, bodyMissionNotes;
@@ -40,15 +42,15 @@ public class CreateMissionNotesActivity extends AppCompatActivity {
         firebaseDB = FirebaseFirestore.getInstance();
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        EditText ctitleMissionNotes = findViewById(R.id.cTitleMissionNotes);
-        EditText cbodyMissionNotes = findViewById(R.id.cBodyMissionNotes);
-        Button btnSave = findViewById(R.id.btnSaveFromCreate);
+        EditText titleMissionNotes = findViewById(R.id.titleMissionNotes);
+        EditText bodyMissionNotes = findViewById(R.id.bodyMissionNotes);
+        Button btnSave = findViewById(R.id.btnSave);
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String titleNotes = ctitleMissionNotes.getText().toString();
-                String bodyNotes = cbodyMissionNotes.getText().toString();
+                String titleNotes = titleMissionNotes.getText().toString();
+                String bodyNotes = bodyMissionNotes.getText().toString();
 
                 if(bodyNotes.isEmpty() || titleNotes.isEmpty()) {
 
