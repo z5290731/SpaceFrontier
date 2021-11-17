@@ -16,7 +16,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#4E518B" >
+        android:background="#2B2B35">
 
         <ImageView
             android:id="@+id/planetKawaii"
@@ -33,10 +33,11 @@
             android:id="@+id/planetName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="monospace"
+            android:fontFamily="@font/electrolize"
             android:text="Jupiter"
-            android:textColor="#FFFFFFFF"
+            android:textColor="#F2F2F6"
             android:textSize="27sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/planetKawaii"

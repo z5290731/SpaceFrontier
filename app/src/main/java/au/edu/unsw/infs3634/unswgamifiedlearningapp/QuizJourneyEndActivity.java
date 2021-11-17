@@ -1,5 +1,6 @@
 package au.edu.unsw.infs3634.unswgamifiedlearningapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -9,6 +10,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import au.edu.unsw.infs3634.unswgamifiedlearningapp.uxui.journeyLog.journeyLogFragment;
 
@@ -20,6 +29,7 @@ public class QuizJourneyEndActivity extends AppCompatActivity {
     public TextView tvAttribute;
     public ImageView imageView2;
     public int quizScore;
+    public long currentScore;
 
 
 
@@ -29,7 +39,7 @@ public class QuizJourneyEndActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_journey_end);
 
-        Button btn_finish = (findViewById(R.id.btn_finish));
+        btn_finish = findViewById(R.id.btn_finish);
         TextView tvJourneyPoints = findViewById(R.id.tvJourneyPoints);
         TextView tvOneLine = findViewById(R.id.tvOneLine);
         TextView tvAttribute = findViewById(R.id.tvAttribute);
@@ -65,20 +75,53 @@ public class QuizJourneyEndActivity extends AppCompatActivity {
         btn_finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Context c = v.getContext();
-                Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
-                //planetInfoIntent.putExtra("planet", wPlanetName);
-                //planetInfoIntent.putExtra("planet_picture",planetPicture);
-                //planetInfoIntent.putExtra("planet_subtitle", planetSubtitle);
-                c.startActivity(intent);
+                Toast.makeText(getApplication(), "Clicked to Finish!", Toast.LENGTH_SHORT).show();
+                scoreUpload();
+            }
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
+        scoreUpload();
+    }
+
+
+    public void scoreUpload() {
+
+        System.out.println("Entering Score Upload Method Now!");
+
+        FirebaseAuth authentication = FirebaseAuth.getInstance();
+        FirebaseDatabase database = FirebaseDatabase.getInstance("https://spacefrontier-b2799-default-rtdb.asia-southeast1.firebasedatabase.app");
+        DatabaseReference finalScore = database.getReference(authentication.getUid()).child("Score");
+
+        System.out.println("Database Initialised");
+
+        finalScore.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                System.out.println("Entering onDataChange now!");
+                if(snapshot.exists()) {
+                    System.out.println("SnapShot Exists");
+                    currentScore = (long) snapshot.getValue();
+                    currentScore = currentScore + quizScore;
+                    snapshot.getRef().setValue(currentScore);
+                } else {
+                    System.out.println("Snapshot Does Not Exist");
+                    finalScore.setValue(quizScore);
+                }
+                Toast.makeText(getApplication(), "Returning to Journey Log!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(QuizJourneyEndActivity.this, DetailActivity.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+                Toast.makeText(getApplication(), "Score Upload Failed :(", Toast.LENGTH_SHORT).show();
 
             }
         });
-
-
-
-
-
 
     }
 

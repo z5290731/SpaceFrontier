@@ -3,30 +3,38 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/drawable/capsulebutton.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/drawable/ic_launcher_background.xml" value="0.18489583333333334" />
         <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/drawable/line.xml" value="0.1890625" />
         <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/drawable/rectangle.xml" value="0.1890625" />
+        <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/drawable/rounded_corner_textview.xml" value="0.18489583333333334" />
         <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/drawable/thumb01.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/font/baloo2.xml" value="0.19895833333333332" />
+        <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/font/electrolize.xml" value="0.19895833333333332" />
         <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/activity_authentication.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/activity_create_mission_notes.xml" value="0.18" />
         <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/activity_detail.xml" value="0.25" />
         <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/activity_edit_notes_detail.xml" value="0.2552083333333333" />
+        <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/activity_featured.xml" value="0.16875" />
         <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/activity_initial_welcome.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/activity_lesson_planet_data.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/activity_lesson_video.xml" value="0.2" />
-        <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/activity_lesson_welcome.xml" value="0.2" />
+        <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/activity_lesson_video.xml" value="0.18" />
+        <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/activity_lesson_welcome.xml" value="0.25" />
         <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/activity_lesson_wiki.xml" value="0.25" />
         <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/activity_main.xml" value="0.28940217391304346" />
         <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/activity_quiz_journey_end.xml" value="0.25" />
-        <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/activity_quiz_question.xml" value="0.22" />
+        <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/activity_quiz_question.xml" value="0.25" />
         <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/activity_tutorial.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/activity_view_notes_detail.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/activity_view_notes_detail.xml" value="0.2" />
         <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/fragment_cantina.xml" value="0.2" />
         <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/fragment_journey_log.xml" value="0.2" />
-        <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/fragment_notes.xml" value="0.2" />
+        <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/fragment_notes.xml" value="0.5" />
         <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/fragment_space_ship.xml" value="0.16875" />
         <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/notes_recycler_view.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/layout/planet_recycler_view.xml" value="0.25" />
         <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/menu/space_controls.xml" value="0.2552083333333333" />
+        <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2713541666666667" />
+        <entry key="..\:/Users/techn/AndroidStudioProjects/SpaceFrontier/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2713541666666667" />
       </map>
     </option>
   </component>

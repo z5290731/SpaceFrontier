@@ -4,121 +4,119 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/_239908"
     tools:context=".QuizQuestionActivity">
 
     <Button
         android:id="@+id/buttonChoiceA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="224dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/capsulebutton"
+        android:backgroundTint="#BF4B558A"
+        android:fontFamily="@font/electrolize"
         android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/questionText" />
 
     <Button
         android:id="@+id/buttonChoiceB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#BF4B558A"
+        android:fontFamily="@font/electrolize"
         android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/buttonChoiceC"
+        android:background="@drawable/capsulebutton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonChoiceA"
-        app:layout_constraintVertical_bias="0.507" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonChoiceA" />
 
     <Button
         android:id="@+id/buttonChoiceC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/electrolize"
         android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/buttonChoiceD"
+        android:background="@drawable/capsulebutton"
+        android:backgroundTint="#BF4B558A"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonChoiceB" />
 
     <Button
         android:id="@+id/buttonChoiceD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="228dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/electrolize"
         android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/capsulebutton"
+        android:backgroundTint="#BF4B558A"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonChoiceC" />
 
     <TextView
         android:id="@+id/question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="64dp"
+        android:background="#2B2B35"
+        android:fontFamily="@font/electrolize"
         android:text="Question"
-        app:layout_constraintEnd_toStartOf="@+id/questionNumber"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/questionNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="252dp"
+        android:layout_marginStart="1dp"
+        android:background="#2B2B35"
+        android:fontFamily="@font/electrolize"
+
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintStart_toEndOf="@+id/question"
+        app:layout_constraintTop_toTopOf="@+id/question" />
 
     <TextView
         android:id="@+id/questionText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/rounded_corner_textview"
+        android:fontFamily="@font/electrolize"
         android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintHorizontal_bias="0.101"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/question" />
 
     <ImageButton
         android:id="@+id/exitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="192dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="664dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="51dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="6dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/questionNumber"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@android:drawable/btn_dialog" />
+        app:tint="#B3B3B8" />
 
-    <Button
-        android:id="@+id/buttonNext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="289dp"
-        android:layout_marginTop="600dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="16dp"
-        android:text="NEXT"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exitButton" />
-
-    <Button
-        android:id="@+id/buttonConfirm"
-        android:layout_width="251dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="71dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="89dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonChoiceD" />
 </androidx.constraintlayout.widget.ConstraintLayout>

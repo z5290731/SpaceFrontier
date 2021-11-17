@@ -4,16 +4,164 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/_239908"
     tools:context=".LessonPlanetDataActivity">
 
-    <TextView
-        android:id="@+id/solaireText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:scrollbarTrackVertical="@drawable/thumb01"
-        android:scrollbars="vertical"
-        android:scrollHorizontally="false"
+    <ImageButton
+        android:id="@+id/exitButton2"
+        android:layout_width="51dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="6dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
+        app:tint="#B3B3B8"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="345dp"
+        android:layout_height="537dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#3B3B47">
+
+            <TextView
+                android:id="@+id/solaireText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/electrolize"
+                android:text="ERIC THIS WAS HERE BEFORE SO IDK"
+                android:textColor="#FFFFFFFF"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/planetNameData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/electrolize"
+                android:scrollbarTrackVertical="@drawable/thumb01"
+                android:scrollbars="vertical"
+                android:scrollHorizontally="false"
+                android:text="INSERT Planet Name"
+                android:textColor="#FFFFFFFF"
+                android:textSize="34dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/solaireText" />
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="52dp"
+                android:fontFamily="@font/electrolize"
+                android:text="TextView"
+                android:textColor="#FFFFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintStart_toEndOf="@+id/label1"
+                app:layout_constraintTop_toTopOf="@+id/label1" />
+
+            <TextView
+                android:id="@+id/label2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/electrolize"
+                android:text="TextView"
+                android:textColor="#FFFFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/label1"
+                app:layout_constraintTop_toBottomOf="@+id/label1" />
+
+            <TextView
+                android:id="@+id/label4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/electrolize"
+                android:text="TextView"
+                android:textColor="#FFFFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/label2"
+                app:layout_constraintTop_toBottomOf="@+id/label2" />
+
+            <TextView
+                android:id="@+id/label6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/electrolize"
+                android:text="TextView"
+                android:textColor="#FFFFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/label4"
+                app:layout_constraintTop_toBottomOf="@+id/label4" />
+
+            <TextView
+                android:id="@+id/label3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/electrolize"
+                android:text="TextView"
+                android:textColor="#FFFFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/label"
+                app:layout_constraintTop_toTopOf="@+id/label2" />
+
+            <TextView
+                android:id="@+id/label5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/electrolize"
+                android:text="TextView"
+                android:textColor="#FFFFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/label3"
+                app:layout_constraintTop_toTopOf="@+id/label4" />
+
+            <TextView
+                android:id="@+id/label7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/electrolize"
+                android:text="TextView"
+                android:textColor="#FFFFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/label5"
+                app:layout_constraintTop_toTopOf="@+id/label6" />
+
+            <TextView
+                android:id="@+id/label1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="92dp"
+                android:fontFamily="@font/electrolize"
+                android:text="TextView"
+                android:textColor="#FFFFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/planetNameData"
+                app:layout_constraintTop_toBottomOf="@+id/planetNameData" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
