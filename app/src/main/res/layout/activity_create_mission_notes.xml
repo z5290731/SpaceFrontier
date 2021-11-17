@@ -8,7 +8,7 @@
     tools:context=".CreateMissionNotesActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tbCreateNote"
+        android:id="@+id/tbViewNote"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/purple_200"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/titleMissionNotes"
+            android:id="@+id/cTitleMissionNotes"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Enter the title of your Mission Note here!"
@@ -31,10 +31,10 @@
     </androidx.appcompat.widget.Toolbar>
 
     <EditText
-        android:id="@+id/bodyMissionNotes"
+        android:id="@+id/cBodyMissionNotes"
         android:layout_width="match_parent"
         android:layout_height="545dp"
-        android:layout_below="@id/tbCreateNote"
+        android:layout_below="@id/tbViewNote"
         android:background="#0000ffff"
         android:gravity="top|left"
         android:textColorHint="#FFFFFF"
@@ -46,13 +46,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tbCreateNote"
+        app:layout_constraintTop_toBottomOf="@+id/tbViewNote"
         app:layout_constraintVertical_bias="0.284">
 
     </EditText>
 
     <Button
-        android:id="@+id/btnSave"
+        android:id="@+id/btnSaveFromCreate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -61,7 +61,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bodyMissionNotes"
+        app:layout_constraintTop_toBottomOf="@+id/cBodyMissionNotes"
         app:layout_constraintVertical_bias="1.0" />
 
 

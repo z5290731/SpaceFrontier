@@ -48,8 +48,6 @@ public class QuizQuestionActivity extends AppCompatActivity {
         Button buttonChoiceC = findViewById(R.id.buttonChoiceC);
         Button buttonChoiceD = findViewById(R.id.buttonChoiceD);
         ImageButton exitButton = findViewById(R.id.exitButton);
-        Button buttonNext = findViewById(R.id.buttonNext);
-        Button buttonConfirm = findViewById(R.id.buttonConfirm);
 
 
         questionArray = JourneyQuiz.getJourneyQuiz(planetName);
@@ -61,20 +59,6 @@ public class QuizQuestionActivity extends AppCompatActivity {
         setQuestion();
 
         checkAnswer();
-
-        buttonConfirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(questionAnswered == false) {
-
-                    checkAnswer();
-                } else {
-                    System.out.println("NOTHING WAS SELECTED");
-                }
-
-
-            }
-        });
 
 
     }
@@ -204,8 +188,7 @@ public class QuizQuestionActivity extends AppCompatActivity {
             Button buttonChoiceC = findViewById(R.id.buttonChoiceC);
             Button buttonChoiceD = findViewById(R.id.buttonChoiceD);
             ImageButton exitButton = findViewById(R.id.exitButton);
-            Button buttonNext = findViewById(R.id.buttonNext);
-            Button buttonConfirm = findViewById(R.id.buttonConfirm);
+
 
             buttonChoiceA.setClickable(true);
             buttonChoiceB.setClickable(true);

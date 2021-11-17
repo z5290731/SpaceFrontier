@@ -81,8 +81,7 @@
         android:background="@drawable/capsulebutton"
         android:backgroundTint="#3B3B47"
         android:fontFamily="@font/electrolize"
-        android:text="Planet File"
-        android:textAllCaps="false"
+        android:text="Button"
         app:layout_constraintEnd_toEndOf="@+id/button4"
         app:layout_constraintTop_toTopOf="@+id/button3" />
 
