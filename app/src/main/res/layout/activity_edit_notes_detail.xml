@@ -4,6 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/_239908"
     tools:context=".EditNotesDetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbViewNote"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/purple_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/eTitleMissionNotes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Enter the title of your Mission Note here!"
+            android:paddingTop="12dp"
+            android:textColor="@color/black"
+            android:textColorHint="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="16dp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/eBodyMissionNotes"
+        android:layout_width="match_parent"
+        android:layout_height="545dp"
+        android:layout_below="@id/tbViewNote"
+        android:background="#0000ffff"
+        android:gravity="top|left"
+        android:hint="Enter the body of your Mission Note here!"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbViewNote"
+        app:layout_constraintVertical_bias="0.284">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/btnSaveFromEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eBodyMissionNotes"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
