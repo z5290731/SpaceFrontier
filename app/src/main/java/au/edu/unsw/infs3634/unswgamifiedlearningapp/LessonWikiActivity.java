@@ -103,6 +103,7 @@ public class LessonWikiActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(String response) {
                     TextView wikiText = findViewById(R.id.wikiText);
+                    wikiText.setMovementMethod(new ScrollingMovementMethod());
                     try {
                         JSONObject obj = new JSONObject(response);
                         JSONObject extract = obj.getJSONObject("query");
@@ -130,21 +131,19 @@ public class LessonWikiActivity extends AppCompatActivity {
             Response.ErrorListener eListener = new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    //Log.d(TAG, "onErrorResponse Volley Error:");
-                    System.out.println("Shit");
+                    Log.d(TAG, "Volley Error");
                 }
             };
 
             StringRequest finalString = new StringRequest(Request.Method.GET, wikiAPI,rListener,eListener);
             queue.add(finalString);
-            setWiki();
+            //UpdateUi();
             return null;
         }
     }
 
-    private void setWiki() {
+    private void UpdateUi() {
         wikiText = findViewById(R.id.wikiText);
-        wikiText.setMovementMethod(new ScrollingMovementMethod());
     }
 
 

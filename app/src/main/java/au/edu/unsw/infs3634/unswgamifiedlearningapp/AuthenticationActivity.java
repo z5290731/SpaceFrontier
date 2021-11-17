@@ -34,14 +34,11 @@ public class AuthenticationActivity extends AppCompatActivity {
         List<AuthUI.IdpConfig> signIn = Arrays.asList(
                 new AuthUI.IdpConfig.EmailBuilder().build());
 
-        mAuth = FirebaseAuth.getInstance();
-
-
         startActivityForResult(
                 AuthUI.getInstance()
                         .createSignInIntentBuilder()
                         .setIsSmartLockEnabled(false)
-                        //.setTheme(R.style.AuthenticationTheme)
+                        .setTheme(R.style.AuthenticationTheme)
                         .setAvailableProviders(signIn)
                         .build(),
                 AUTHENTICATION);
@@ -58,8 +55,6 @@ public class AuthenticationActivity extends AppCompatActivity {
                 FirebaseUser appUser = FirebaseAuth.getInstance().getCurrentUser();
                 loginSuccess();
             } else {
-
-                Log.d(TAG, "Error! Please Contact Support for Help :( ");
 
             }
         }
