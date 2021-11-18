@@ -98,6 +98,8 @@
         android:layout_marginTop="36dp"
         android:background="@drawable/rounded_corner_textview"
         android:fontFamily="@font/electrolize"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:text="TextView"
         android:textColor="@color/white"
         android:textSize="16sp"

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,6 +23,7 @@ public class LessonWelcomeActivity extends AppCompatActivity {
     public Planet aPlanet;
     public TextView textView4;
     private Planet wPlanet;
+    private ImageButton exitButton2;
     public ImageView planetKawaiiNPC;
 
 
@@ -50,8 +52,18 @@ public class LessonWelcomeActivity extends AppCompatActivity {
 
         ArrayList<Planet> sPlanet = Planet.importPlanetData();
 
+        //wPlanet.getPlanetName();
+
+        for(Planet planet: sPlanet) {
+
+            if(planet.getPlanetName().equals(wPlanetName)) {
+                TextView textView3 = findViewById(R.id.textView3);
+                textView3.setText(planet.getPlanetSunOrbit());
+
+            }
 
 
+        }
 
 
 
@@ -59,13 +71,18 @@ public class LessonWelcomeActivity extends AppCompatActivity {
         Button button5 = findViewById(R.id.button5);
         Button button3 = findViewById(R.id.button3);
         Button button4 = findViewById(R.id.button4);
+        ImageButton exitButton2 = findViewById(R.id.exitButton2);
         TextView textView4 = findViewById(R.id.textView4);
         ImageView planetKawaiiNPC = findViewById(R.id.planetKawaiiNPC);
         planetKawaiiNPC.setImageResource(planetPicture);
         textView4.setText(wPlanetName);
 
-
-
+        exitButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
 
 
