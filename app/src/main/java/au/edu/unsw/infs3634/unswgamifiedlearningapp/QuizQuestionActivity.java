@@ -123,17 +123,21 @@ public class QuizQuestionActivity extends AppCompatActivity {
 
                 } else {
 
-                    if(currentQuestionNumber > 10) {
+                    if(currentQuestionNumber < 10) {
+
+                        Toast.makeText(getApplicationContext(),incorrect,Toast.LENGTH_SHORT).show();
+                        System.out.println("NEXT Q INCORRECT");
+                        setQuestion();
+
+
+
+                    } else {
 
                         Toast.makeText(getApplicationContext(),"Quiz Completed!",Toast.LENGTH_SHORT).show();
                         Toast.makeText(getApplicationContext(),total,Toast.LENGTH_SHORT).show();
                         quizCompletion();
 
-                    } else {
 
-                        Toast.makeText(getApplicationContext(),incorrect,Toast.LENGTH_SHORT).show();
-                        System.out.println("NEXT Q INCORRECT");
-                        setQuestion();
                     }
 
 
