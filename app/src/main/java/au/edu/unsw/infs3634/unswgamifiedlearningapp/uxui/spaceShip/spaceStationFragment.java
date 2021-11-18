@@ -90,11 +90,21 @@ public class spaceStationFragment extends Fragment {
         }
     }
 
+
+    /**
+     * Due to the nature of Asynch Tasks, a careful approach was required to call upon Variables that were set or initialised within the Asynch Task.
+     * The difficulty was compounded with the usage of a Fragment which required certain tweaks to the usual references to Activity.
+     */
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_space_ship, container, false);
+
+        /**
+         * This code allowed the Threads and initialisation of variables to be passed
+         */
 
         int SDK_INT = android.os.Build.VERSION.SDK_INT;
         if (SDK_INT > 8)
@@ -104,6 +114,10 @@ public class spaceStationFragment extends Fragment {
             StrictMode.setThreadPolicy(policy);
 
         }
+
+        /**
+         * A method called upon to executed the API
+         */
 
         new spaceStationFragment.ImportAPODContent(context).execute();
 
@@ -121,6 +135,12 @@ public class spaceStationFragment extends Fragment {
 
     }
 
+    /**
+     * AsyncTasks were chosen for API execution in this assessment, owing to its light footprint on resources
+     * and ability to easily update when required. However, certain care was required in ensuring you could select
+     * help.
+     */
+
 
 
     private class ImportAPODContent extends AsyncTask<String, String, String> {
@@ -133,8 +153,16 @@ public class spaceStationFragment extends Fragment {
 
         }
 
+        /**
+         * Do In Background is an Async Method which allows for tasks to be completed in the background.
+         */
+
         @Override
         protected String doInBackground(String... strings) {
+
+            /**
+             * NASA APOD API Key Declared
+             */
 
             final String APODAPI = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY";
 
@@ -148,6 +176,11 @@ public class spaceStationFragment extends Fragment {
 
             textViewURL = (TextView) getActivity().findViewById(R.id.textView12);
 
+            /**
+             * On response to finalString queue.add, execute these actions below. Try Catch was used
+             * to help in debugging. This was vitally important especially during the setting of ImageViews
+             */
+
             Response.Listener<String> rListener = new Response.Listener<String>() {
 
                 @Override
@@ -156,6 +189,11 @@ public class spaceStationFragment extends Fragment {
 
 
                     try {
+
+                        /**
+                         * In built JSONObject and Parser utilised to parse the details from the GET API Response
+                         */
+
                         JSONObject obj = new JSONObject(response);
                         //JSONObject extract = obj.getJSONObject("explanation");;
                         String article = obj.getString("explanation");
@@ -166,6 +204,11 @@ public class spaceStationFragment extends Fragment {
                         textViewURL.setText(title);
 
                         imageURL = obj.getString("hdurl");
+
+                        /**
+                         * This Try Catch clause included the ability to set imageViews based on the website links
+                         * undestanding whether links are passed through properly.
+                         */
 
 
                         try {

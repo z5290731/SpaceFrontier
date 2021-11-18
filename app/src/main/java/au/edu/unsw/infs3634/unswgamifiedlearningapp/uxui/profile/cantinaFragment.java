@@ -96,6 +96,11 @@ public class cantinaFragment extends Fragment {
 
         seekBar = (SeekBar) fragmentView.findViewById(R.id.seekBar);
 
+        /**
+         * For the Cantina, utilisation of the Firebase Realtime Database was utilise
+         * as a simple and efficient way to query the limited data by each user
+         */
+
 
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
@@ -103,12 +108,23 @@ public class cantinaFragment extends Fragment {
 
         tvUser.setText(user.getDisplayName().toString());
 
+        /**
+         * The getInstance() method called included a specific link to the Database backend
+         * due to the Firebase default location being in the U.S. The Sydney Servers were chosen
+         * for data integrity and low latency reasons.
+         */
 
         FirebaseDatabase RealtimeDB = FirebaseDatabase.getInstance("https://spacefrontier-b2799-default-rtdb.asia-southeast1.firebasedatabase.app");
         DatabaseReference scoreValue = RealtimeDB.getReference(FirebaseAuth.getInstance().getUid()).child("Score");
         DatabaseReference levelValue = RealtimeDB.getReference(FirebaseAuth.getInstance().getUid()).child("XP");
         //
         // DatabaseReference myLeadRef = database.getReference();
+
+        /**
+         * These ValueEventListeners help in setting and understanding when and how data hase changed. Indeed
+         * the onDataChange and checking of snapshots of the Realtime Database allow decisions to be made which impact
+         * upon the users score.
+         */
 
         scoreValue.addValueEventListener(new ValueEventListener() {
             @Override
@@ -128,6 +144,10 @@ public class cantinaFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+
+                /**
+                 *This allowed a return string to be utilised if an error occurred.
+                 */
 
                 System.out.println("Oh No, Its happening");
 

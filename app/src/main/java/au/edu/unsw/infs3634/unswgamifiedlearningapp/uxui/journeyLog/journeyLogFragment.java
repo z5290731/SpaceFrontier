@@ -25,6 +25,12 @@ import au.edu.unsw.infs3634.unswgamifiedlearningapp.RecyclerAdapters.PlanetAdapt
  * Use the {@link journeyLogFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
+/**
+ *  Fragments are a powerful feature of the Android platform and was chosen to be utilised as a
+ *  modular and reusable way to allow different components of the game to be used efficiently. It also
+ *  allows for an ease in backstack and app lifecycle, ensuring a seamless frictionless experience.
+ */
 public class journeyLogFragment extends Fragment {
 
     public static final Integer EXTRA_MESSAGE = 0;
@@ -67,6 +73,13 @@ public class journeyLogFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+
+    /**
+     * Similar to Activity's onCreate, onCreateView inflates the fragments. In this case,
+     * the onCreateView is initialising the RecyclerView and Adapter for the Journey Log.
+     * This was required to be done in  a different manner with different references to the view
+     * than normal tutorials due to the unique way Fragments work within the Android EcoSystem
+     */
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

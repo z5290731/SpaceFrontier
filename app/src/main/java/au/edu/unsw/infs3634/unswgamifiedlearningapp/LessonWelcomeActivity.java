@@ -103,16 +103,16 @@ public class LessonWelcomeActivity extends AppCompatActivity {
             }
         });
 
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Context c = v.getContext();
-                Intent planetInfoIntent = new Intent(getApplicationContext(),LessonPlanetDataActivity.class);
-                planetInfoIntent.putExtra("planet", wPlanetName);
-                c.startActivity(planetInfoIntent);
+        //button5.setOnClickListener(new View.OnClickListener() {
+            //@Override
+            //public void onClick(View v) {
+                //Context c = v.getContext();
+                //Intent planetInfoIntent = new Intent(getApplicationContext(),LessonPlanetDataActivity.class);
+                //planetInfoIntent.putExtra("planet", wPlanetName);
+                //c.startActivity(planetInfoIntent);
 
-            }
-        });
+            //}
+        //});
 
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
