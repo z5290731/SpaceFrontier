@@ -191,7 +191,7 @@ public class spaceStationFragment extends Fragment {
                     try {
 
                         /**
-                         * In built JSONObject and Parser utilised to parse the details from the GET API Response
+                         * In built JSONObject and Parser utilised to parse the details from the GET API Response.
                          */
 
                         JSONObject obj = new JSONObject(response);
