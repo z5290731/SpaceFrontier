@@ -113,7 +113,7 @@ public class notesFragment extends Fragment {
             }
         });
 
-        Query notesQuery = fireBaseDB.collection("mission_notes").document(currentUser.getUid()).collection("userNotes").orderBy("title", Query.Direction.DESCENDING);
+        Query notesQuery = fireBaseDB.collection("journey").document(currentUser.getUid()).collection("userMissionNotes").orderBy("titleNotes", Query.Direction.DESCENDING);
 
         FirestoreRecyclerOptions<NotesFireBaseModel> currentMissionNotes = new FirestoreRecyclerOptions.Builder<NotesFireBaseModel>().setQuery(notesQuery,NotesFireBaseModel.class).build();
 
@@ -123,8 +123,8 @@ public class notesFragment extends Fragment {
 
 
 
-                missionNotesViewHolder.titleNote.setText(notesFireBaseModel.getNotesTitle());
-                missionNotesViewHolder.bodyNote.setText(notesFireBaseModel.getNotesBody());
+                missionNotesViewHolder.titleNote.setText(notesFireBaseModel.getTitleNotes());
+                missionNotesViewHolder.bodyNote.setText(notesFireBaseModel.getBodyNotes());
 
 
                 String noteID = MissionNotesAdapter.getSnapshots().getSnapshot(i).getId();
@@ -134,8 +134,8 @@ public class notesFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         Intent i = new Intent(v.getContext(), ViewNotesDetailActivity.class);
-                        i.putExtra("title", notesFireBaseModel.getNotesTitle());
-                        i.putExtra("body", notesFireBaseModel.getNotesBody());
+                        i.putExtra("titleNotes", notesFireBaseModel.getTitleNotes());
+                        i.putExtra("bodyNotes", notesFireBaseModel.getBodyNotes());
                         i.putExtra("ID", noteID);
 
                         v.getContext().startActivity(i);
@@ -163,8 +163,9 @@ public class notesFragment extends Fragment {
 
         notesRecyclerView = fragmentView.findViewById(R.id.rvMissionNotes);
         notesRecyclerView.setHasFixedSize(true);
-        LayoutManager = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
+        LayoutManager = new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL);
         notesRecyclerView.setLayoutManager(LayoutManager);
+        System.out.println("Setting Adapters");
         notesRecyclerView.setAdapter(MissionNotesAdapter);
 
 
@@ -188,10 +189,25 @@ public class notesFragment extends Fragment {
         public MissionNotesViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            titleNote = itemView.findViewById(R.id.textView8);
-            bodyNote = itemView.findViewById(R.id.textView9);
+            titleNote = itemView.findViewById(R.id.textView98);
+            bodyNote = itemView.findViewById(R.id.textView99);
             //mNote = itemView.findViewById(R.id.ll_Note);
 
         }
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        MissionNotesAdapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if(MissionNotesAdapter != null) {
+            MissionNotesAdapter.stopListening();
+        }
+    }
+
 }
