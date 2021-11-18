@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import au.edu.unsw.infs3634.unswgamifiedlearningapp.AppDatabase;
 import au.edu.unsw.infs3634.unswgamifiedlearningapp.DBEntities.Planet;
 import au.edu.unsw.infs3634.unswgamifiedlearningapp.LessonWelcomeActivity;
 import au.edu.unsw.infs3634.unswgamifiedlearningapp.R;
@@ -28,7 +27,6 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
     private Planet mPlanet;
     private RecyclerViewClickListener mListener;
     private int[] planetImages;
-    AppDatabase db;
     String planetName;
 
 

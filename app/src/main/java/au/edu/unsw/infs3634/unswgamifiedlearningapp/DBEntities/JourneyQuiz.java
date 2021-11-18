@@ -156,6 +156,18 @@ public class JourneyQuiz {
 
             case "Mars":
 
+                quizArray.add(new JourneyQuiz(1,"How long is a Mars Day?","1 Day 0 hours 37 Minutes","30 Days 23 Hours 59 Minutes","365 days 23 hours","5 Days 12 Hours 10 minutes","1 Day 0 hours 37 Minutes","c"));
+                quizArray.add(new JourneyQuiz(2,"What is Olympus Mons","The largest crater in the Solar System","The largest volcano in the Solar System","A Camera","First spaceship to land on Mars","The largest volcano in the Solar System","c"));
+                quizArray.add(new JourneyQuiz(3,"Why is Mars referred to the Red Planet ?","it has significant amount of Iron Oxide which gives it a reddish apperance","The Roman God of War liked Red","It has a red atmosphere","The largest volcano is red","it has significant amount of Iron Oxide which gives it a reddish apperance","c"));
+                quizArray.add(new JourneyQuiz(4,"Who was the first person to see Mars via telescope?","Christiaan Huygens","Galileo Galilei","Aristotle","Ancient Egyptians","Christiaan Huygens","c"));
+                quizArray.add(new JourneyQuiz(5,"What colour is the sunset on Mars?","Red","Green","Yellow","Blue","Blue","c"));
+                quizArray.add(new JourneyQuiz(6,"Which lander confirmed presence of water ice on Mars?","Opportunity","Curiosity","Maven","Phoenix","Phoenix","c"));
+                quizArray.add(new JourneyQuiz(7,"What was the first country to achieve Mars orbit on its first attempt?","India","USA","Russia","China","India","c"));
+                quizArray.add(new JourneyQuiz(8,"Mars has the largest ___ in the solar system?","Hurricanes","Earthquakes","Dust Storms","Ozone Layer","Dust Storms","c"));
+                quizArray.add(new JourneyQuiz(9,"Which of the following gases exist in Mars' atmosphere?","Hydrogen","Oxygen","Helium","Fluorine","Oxygen","c"));
+                quizArray.add(new JourneyQuiz(10,"Which of the following does Mars NOT have?","Atmosphere","Solid Core","Magnetic Field","Volcanoes","Magnetic Field","c"));
+
+
                 break;
 
             case "Jupiter":
