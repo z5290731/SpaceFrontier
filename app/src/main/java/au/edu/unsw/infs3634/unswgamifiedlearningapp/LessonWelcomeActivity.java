@@ -71,6 +71,8 @@ public class LessonWelcomeActivity extends AppCompatActivity {
         Button button5 = findViewById(R.id.button5);
         Button button3 = findViewById(R.id.button3);
         Button button4 = findViewById(R.id.button4);
+        Button button51 = findViewById(R.id.button5);
+        button51.setClickable(false);
         ImageButton exitButton2 = findViewById(R.id.exitButton2);
         TextView textView4 = findViewById(R.id.textView4);
         ImageView planetKawaiiNPC = findViewById(R.id.planetKawaiiNPC);
