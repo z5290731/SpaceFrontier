@@ -1,13 +1,29 @@
 package au.edu.unsw.infs3634.unswgamifiedlearningapp.uxui.profile;
 
+import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import au.edu.unsw.infs3634.unswgamifiedlearningapp.MainActivity;
 import au.edu.unsw.infs3634.unswgamifiedlearningapp.R;
 
 /**
@@ -16,6 +32,11 @@ import au.edu.unsw.infs3634.unswgamifiedlearningapp.R;
  * create an instance of this fragment.
  */
 public class cantinaFragment extends Fragment {
+
+    private TextView tvUser, tvLevel, tvScore;
+    private Button btnSignOut, btnTutorial;
+    private ProgressBar progressBar2;
+    private SeekBar seekBar;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +82,90 @@ public class cantinaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cantina, container, false);
+        View fragmentView = inflater.inflate(R.layout.fragment_cantina, container, false);
+
+        tvUser = (TextView) fragmentView.findViewById(R.id.tvUser);
+
+        tvLevel = (TextView) fragmentView.findViewById(R.id.tvLevel);
+
+        tvScore = (TextView) fragmentView.findViewById(R.id.tvScore);
+
+        btnSignOut = (Button) fragmentView.findViewById(R.id.btnSignOut);
+
+        btnTutorial = (Button) fragmentView.findViewById(R.id.btnTutorial);
+
+        seekBar = (SeekBar) fragmentView.findViewById(R.id.seekBar);
+
+
+
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        FirebaseUser user = auth.getCurrentUser();
+
+        tvUser.setText(user.getDisplayName().toString());
+
+
+        FirebaseDatabase RealtimeDB = FirebaseDatabase.getInstance("https://spacefrontier-b2799-default-rtdb.asia-southeast1.firebasedatabase.app");
+        DatabaseReference scoreValue = RealtimeDB.getReference(FirebaseAuth.getInstance().getUid()).child("Score");
+        DatabaseReference levelValue = RealtimeDB.getReference(FirebaseAuth.getInstance().getUid()).child("XP");
+        //
+        // DatabaseReference myLeadRef = database.getReference();
+
+        scoreValue.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()) {
+                    tvScore.setText(snapshot.getValue().toString());
+                    seekBar.setProgress(Integer.parseInt(snapshot.getValue().toString()));
+                    seekBar.setMax(100);
+
+                } else {
+                    tvScore.setText(String.valueOf(0));
+
+                }
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+                System.out.println("Oh No, Its happening");
+
+            }
+        });
+
+        levelValue.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()) {
+                    tvLevel.setText(snapshot.getValue().toString());
+                } else {
+                    tvLevel.setText(String.valueOf(1));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        btnSignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent i = new Intent(v.getContext(), MainActivity.class);
+                startActivity(i);
+
+
+            }
+        });
+
+
+
+
+
+
+        return fragmentView;
     }
 }

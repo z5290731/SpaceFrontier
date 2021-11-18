@@ -26,6 +26,7 @@ public class AuthenticationActivity extends AppCompatActivity {
     private static final String TAG = "AuthenticationActivity";
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +52,10 @@ public class AuthenticationActivity extends AppCompatActivity {
         if(requestLoginCode == AUTHENTICATION) {
             IdpResponse authenticationResponse = IdpResponse.fromResultIntent(data);
 
+
+
             if(resultLoginCode == RESULT_OK) {
+
                 FirebaseUser appUser = FirebaseAuth.getInstance().getCurrentUser();
                 loginSuccess();
             } else {

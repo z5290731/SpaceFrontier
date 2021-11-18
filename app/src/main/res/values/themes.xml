@@ -22,4 +22,10 @@
         parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.UNSWGamifiedLearningApp.PopupOverlay"
         parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.UNSWGamifiedLearningApp.WhiteAccent">
+        <item name="colorAccent">@color/white</item>
+    </style>
+
+
 </resources>
