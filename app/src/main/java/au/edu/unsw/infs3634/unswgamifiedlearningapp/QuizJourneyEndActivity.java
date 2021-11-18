@@ -30,6 +30,7 @@ public class QuizJourneyEndActivity extends AppCompatActivity {
     public ImageView imageView2;
     public int quizScore;
     public long currentScore;
+    public long currentLevel;
 
 
 
@@ -94,6 +95,7 @@ public class QuizJourneyEndActivity extends AppCompatActivity {
         FirebaseAuth authentication = FirebaseAuth.getInstance();
         FirebaseDatabase database = FirebaseDatabase.getInstance("https://spacefrontier-b2799-default-rtdb.asia-southeast1.firebasedatabase.app");
         DatabaseReference finalScore = database.getReference(authentication.getUid()).child("Score");
+        DatabaseReference finalLevel = database.getReference(authentication.getUid()).child("XP");
 
         System.out.println("Database Initialised");
 
@@ -105,7 +107,35 @@ public class QuizJourneyEndActivity extends AppCompatActivity {
                     System.out.println("SnapShot Exists");
                     currentScore = (long) snapshot.getValue();
                     currentScore = currentScore + quizScore;
-                    snapshot.getRef().setValue(currentScore);
+                    if(currentScore >= 100) {
+                        currentScore = currentScore - 100;
+                        snapshot.getRef().setValue(currentScore);
+                        finalLevel.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                if(snapshot.exists()) {
+                                    currentLevel = (long) snapshot.getValue();
+                                    currentLevel = currentLevel + 1;
+                                    snapshot.getRef().setValue(currentLevel);
+
+                                } else {
+                                    finalScore.setValue(1);
+
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                                Toast.makeText(getApplication(), "Score Upload Failed :(", Toast.LENGTH_SHORT).show();
+
+
+                            }
+                        });
+                    } else {
+                        snapshot.getRef().setValue(currentScore);
+                    }
+
                 } else {
                     System.out.println("Snapshot Does Not Exist");
                     finalScore.setValue(quizScore);
