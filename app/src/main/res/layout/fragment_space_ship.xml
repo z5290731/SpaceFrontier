@@ -5,60 +5,127 @@
     android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/b1bdc1ae539dcbd1a7c33cef3e5f2d9a"
+    android:background="@drawable/_239908"
     tools:context=".uxui.spaceShip.spaceStationFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/_239908"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
-        <SearchView
-            android:id="@+id/searchView"
-            android:layout_width="367dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="100dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="200dp">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/journeyRecycler"
-            android:layout_width="409dp"
-            android:layout_height="563dp"
-            android:layout_marginStart="6dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginBottom="4dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/searchView" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:text="Journey Log"
-        android:textColor="#FFFFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/tvUser3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Explore the Solar System"
-        android:textColor="#FFFFFFFF"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="43dp"
+                    android:background="#3B3B47"
+                    android:fontFamily="@font/electrolize"
+                    android:text="Today's NASA APOD"
+                    android:textColor="#FFFFFF"
+                    android:textSize="34sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvUser2" />
+
+                <TextView
+                    android:id="@+id/tvUser2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="42dp"
+                    android:layout_marginEnd="208dp"
+                    android:background="#3B3B47"
+                    android:fontFamily="@font/electrolize"
+                    android:text="Back :)"
+                    android:textColor="#FFFFFF"
+                    android:textSize="34sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.031"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvUser" />
+
+                <TextView
+                    android:id="@+id/tvUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="225dp"
+                    android:background="#3B3B47"
+                    android:fontFamily="@font/electrolize"
+                    android:text="Welcome"
+                    android:textColor="#FFFFFF"
+                    android:textSize="34sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="20dp"
+                    android:background="#3B3B47"
+                    android:fontFamily="@font/electrolize"
+                    android:text="Loading Title"
+                    android:textColor="#FFFFFF"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvUser3" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="411dp"
+                    android:layout_height="224dp"
+
+                    android:layout_marginTop="308dp"
+                    android:background="#3B3B47"
+                    android:fontFamily="@font/electrolize"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="Loading Description"
+                    android:textColor="#FFFFFF"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.163"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvUser3" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="28dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView12"
+                    tools:src="@tools:sample/avatars" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -52,8 +52,18 @@ public class LessonWelcomeActivity extends AppCompatActivity {
 
         ArrayList<Planet> sPlanet = Planet.importPlanetData();
 
+        //wPlanet.getPlanetName();
+
+        for(Planet planet: sPlanet) {
+
+            if(planet.getPlanetName().equals(wPlanetName)) {
+                TextView textView3 = findViewById(R.id.textView3);
+                textView3.setText(planet.getPlanetSunOrbit());
+
+            }
 
 
+        }
 
 
 
